@@ -1,0 +1,12 @@
+# pyautogui-rust
+
+pyautogui-rust is a Python 3.9+ PyAutoGUI-compatible GUI automation library.
+Install with `python -m pip install pyautogui-rust`, then import `pyautogui`.
+It preserves the PyAutoGUI 0.9.54 public API and adds optional Rust acceleration
+on Windows. Native failures fall back per operation to the original compatible
+backend. It does not require a driver, elevation, or a separate Rust import.
+
+Primary documentation: README.md, DEVELOPING.md, docs/index.rst.
+Runtime inspection: `pyautogui.getBackendInfo()`.
+Release checks: Python hermetic tests, Rust tests and Clippy, distribution
+validation, and installed-wheel smoke test.

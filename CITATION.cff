@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use pyautogui-rust in research, please cite this software."
+type: software
+title: "pyautogui-rust"
+version: "0.9.54.1"
+abstract: "PyAutoGUI-compatible GUI automation with an optional Rust-accelerated Windows backend."
+license: BSD-3-Clause
+repository-code: "https://github.com/zhai/pyautogui"
+keywords:
+  - gui-automation
+  - pyautogui
+  - python
+  - rust
+  - windows
+authors:
+  - family-names: zhai
+  - family-names: Sweigart
+    given-names: Al
