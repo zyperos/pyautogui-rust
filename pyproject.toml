@@ -79,9 +79,9 @@ vision = [
 pyautogui = "pyautogui._cli:main"
 
 [project.urls]
-Documentation = "https://github.com/zhai/pyautogui-rust#readme"
-Issues = "https://github.com/zhai/pyautogui-rust/issues"
-Repository = "https://github.com/zhai/pyautogui-rust"
+Documentation = "https://github.com/zyperos/pyautogui-rust#readme"
+Issues = "https://github.com/zyperos/pyautogui-rust/issues"
+Repository = "https://github.com/zyperos/pyautogui-rust"
 
 [tool.setuptools]
 include-package-data = true
