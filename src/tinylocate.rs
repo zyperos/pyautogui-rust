@@ -8,7 +8,9 @@ use std::collections::BTreeMap;
 use std::fs;
 use std::io;
 use std::path::Path;
+#[cfg(target_os = "windows")]
 use std::sync::{Arc, Mutex, OnceLock};
+#[cfg(target_os = "windows")]
 use std::time::UNIX_EPOCH;
 
 use pyo3::exceptions::{PyOSError, PyValueError};
@@ -170,10 +172,14 @@ pub fn load_weights(path: &Path) -> io::Result<ModelWeights> {
     parse_weights(&fs::read(path)?)
 }
 
+#[cfg(target_os = "windows")]
 type ModelCacheEntry = ((String, u128, u64), Arc<ModelWeights>);
+#[cfg(target_os = "windows")]
 type LocatedTuple = (f32, f32, f32, f32, f32);
+#[cfg(target_os = "windows")]
 static MODEL_CACHE: OnceLock<Mutex<Option<ModelCacheEntry>>> = OnceLock::new();
 
+#[cfg(target_os = "windows")]
 fn cached_weights(path: &Path) -> io::Result<Arc<ModelWeights>> {
     let resolved = path.canonicalize()?;
     let metadata = fs::metadata(&resolved)?;

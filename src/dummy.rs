@@ -72,21 +72,20 @@ fn move_to_smooth(_x: i32, _y: i32, _duration: f64, _steps: u32) -> PyResult<()>
 }
 
 #[pyfunction(signature = (region=None))]
-fn capture_screen_gdi(
-    _py: Python<'_>,
-    _region: Option<(i32, i32, i32, i32)>,
-) -> PyResult<PyObject> {
+fn capture_screen_gdi(_py: Python<'_>, region: Option<(i32, i32, i32, i32)>) -> PyResult<PyObject> {
+    let _ = region;
     Err(platform_error())
 }
 
 #[pyfunction(signature = (needle_bytes, needle_w, needle_h, confidence, region=None))]
 fn locate_on_screen_rust(
-    _needle_bytes: &[u8],
-    _needle_w: usize,
-    _needle_h: usize,
-    _confidence: f32,
-    _region: Option<(i32, i32, i32, i32)>,
+    needle_bytes: &[u8],
+    needle_w: usize,
+    needle_h: usize,
+    confidence: f32,
+    region: Option<(i32, i32, i32, i32)>,
 ) -> PyResult<Option<(i32, i32, i32, i32)>> {
+    let _ = (needle_bytes, needle_w, needle_h, confidence, region);
     Err(platform_error())
 }
 
