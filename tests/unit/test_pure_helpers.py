@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import sys
+
 import pytest
 
 import pyautogui
@@ -58,6 +60,7 @@ def test_non_shift_characters(character):
     assert not pyautogui.isShiftCharacter(character)
 
 
+@pytest.mark.skipif(sys.platform != "win32", reason="native failsafe hook is Windows-only")
 def test_failsafe_reads_native_monitor_and_resets_it(fake_platform, monkeypatch):
     monkeypatch.setattr(pyautogui, "FAILSAFE", True)
     fake_platform.failsafe_triggered = True

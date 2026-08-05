@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import ast
 import inspect
+import sys
 from pathlib import Path
 
 import pytest
@@ -178,9 +179,9 @@ def test_backend_info_reports_loaded_native_capabilities_without_side_effects(ru
     assert info == {
         "package": "pyautogui-rust",
         "version": pyautogui.__version__,
-        "platform": "win32",
+        "platform": sys.platform,
         "native_extension": True,
-        "windows_acceleration": True,
+        "windows_acceleration": sys.platform == "win32",
         "native_features": ("input", "screenshot", "template_matching", "visual_location"),
     }
     assert rust_stub.calls == before
