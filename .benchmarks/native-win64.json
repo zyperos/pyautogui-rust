@@ -1,0 +1,33 @@
+{
+  "environment": {
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python": "3.12.7",
+    "pyautogui": "0.9.54.1",
+    "screen": [
+      1920,
+      1080
+    ],
+    "region": [
+      0,
+      0,
+      320,
+      240
+    ]
+  },
+  "screenshot_accelerated": {
+    "median_ms": 4.1488,
+    "p95_ms": 4.4344,
+    "minimum_ms": 3.0706
+  },
+  "screenshot_pyscreeze": {
+    "median_ms": 16.8441,
+    "p95_ms": 18.6281,
+    "minimum_ms": 15.9483
+  },
+  "screenshot_speedup": 4.06,
+  "template_match": {
+    "median_ms": 100.5066,
+    "p95_ms": 111.7661,
+    "minimum_ms": 98.787
+  }
+}
